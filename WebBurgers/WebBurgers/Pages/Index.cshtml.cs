@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebBurgers.DataBase;
 
 namespace WebBurgers.Pages
 {
@@ -14,7 +15,7 @@ namespace WebBurgers.Pages
 
         public void OnGet()
         {
-
+            DB.instance.OpenConnection();
         }
     }
 }
