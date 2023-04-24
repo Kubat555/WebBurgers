@@ -1,0 +1,41 @@
+﻿@page
+@model WebBurgers.Pages.Products.ProductModel
+@{
+
+}
+<h1>Products page</h1>
+
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th class="col">Product</th>
+            <th class="col">Unit</th>
+            <th class="col">Count</th>
+            <th class="col">Summa</th>
+            <th class="col"></th>
+            <!-- и т.д. -->
+        </tr>
+    </thead>
+    <tbody>
+        @while(Model.reader.Read())
+        {
+            <tr>
+                <td class="col">@Model.reader.GetString(1)</td>
+                <td class="col">@Model.reader.GetString(2)</td>
+                <td class="col">@Model.reader.GetDecimal(3)</td>
+                <td class="col">@Model.reader.GetDecimal(4)</td>
+                <td class="col"><a href="/Products/Edit/@Model.reader.GetInt32(0)">Edit</a></td>
+                <!-- и т.д. -->
+            </tr>
+        }
+        @{
+            Model.reader.Close();
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
