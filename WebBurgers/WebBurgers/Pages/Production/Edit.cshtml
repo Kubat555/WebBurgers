@@ -1,0 +1,48 @@
+﻿@page
+@model WebBurgers.Pages.Production.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Редактирование записи</h1>
+
+<h4>Производство продукции</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProductionOfProduct.Id" />
+            <div class="form-group">
+                <label asp-for="ProductionOfProduct.Product" class="control-label"></label>
+                <select asp-for="ProductionOfProduct.Product" class="form-control" asp-items="ViewBag.Product"></select>
+                <span asp-validation-for="ProductionOfProduct.Product" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductionOfProduct.Count" class="control-label"></label>
+                <input asp-for="ProductionOfProduct.Count" class="form-control" />
+                <span asp-validation-for="ProductionOfProduct.Count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductionOfProduct.Date" class="control-label"></label>
+                <input asp-for="ProductionOfProduct.Date" class="form-control" />
+                <span asp-validation-for="ProductionOfProduct.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductionOfProduct.Employee" class="control-label"></label>
+                <select asp-for="ProductionOfProduct.Employee" class="form-control" asp-items="ViewBag.Employee"></select>
+                <span asp-validation-for="ProductionOfProduct.Employee" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a class="btn btn-dark" asp-page="./Index">Назад</a>
+</div>
+

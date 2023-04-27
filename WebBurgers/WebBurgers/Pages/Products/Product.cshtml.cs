@@ -19,5 +19,16 @@ namespace WebBurgers.Pages.Products
       
         }
 
+        public IActionResult OnPost(int id)
+        {
+            SqlConnection connection = DB.instance.getConnection();
+            SqlCommand command = new SqlCommand("sp_deleteProduct", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@id", id);
+            reader = command.ExecuteReader();
+            reader.Close();
+            return RedirectToPage();
+        }
+
     }
 }

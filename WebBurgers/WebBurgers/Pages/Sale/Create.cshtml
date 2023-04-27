@@ -1,0 +1,52 @@
+﻿@page
+@model WebBurgers.Pages.Sale.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SaleOfProduct</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Product" class="control-label"></label>
+                <select asp-for="SaleOfProduct.Product" class ="form-control" asp-items="ViewBag.Product"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Count" class="control-label"></label>
+                <input asp-for="SaleOfProduct.Count" class="form-control" />
+                <span asp-validation-for="SaleOfProduct.Count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Summa" class="control-label"></label>
+                <input asp-for="SaleOfProduct.Summa" class="form-control" />
+                <span asp-validation-for="SaleOfProduct.Summa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Date" class="control-label"></label>
+                <input asp-for="SaleOfProduct.Date" class="form-control" />
+                <span asp-validation-for="SaleOfProduct.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Employee" class="control-label"></label>
+                <select asp-for="SaleOfProduct.Employee" class ="form-control" asp-items="ViewBag.Employee"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

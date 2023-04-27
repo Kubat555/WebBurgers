@@ -1,0 +1,66 @@
+﻿@page
+@model WebBurgers.Pages.Materials.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Сырье</h1>
+
+<br />
+<p>
+    <a asp-page="Create" class="btn btn-primary">Добавить</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th class="col">
+                    Name
+                </th>
+                <th class="col">
+                    Unit
+                </th>
+                <th class="col">
+                    Count
+                </th>
+                <th class="col">
+                    Summa
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @while (Model.reader.Read())
+            {
+                <tr>
+                    <td class="col">
+                        @Model.reader.GetString(1)
+                    </td>
+                    <td class="col">
+                        @Model.reader.GetString(2)
+                    </td>
+                    <td class="col">
+                        @Model.reader.GetDecimal(3)
+                    </td>
+                    <td class="col">
+                        @Model.reader.GetDecimal(4)
+                    </td>
+                    <td class="col">
+                        <a asp-page="./Edit" asp-route-id="@Model.reader.GetInt32(0)" class="btn btn-sm btn-outline-dark">Изменить</a>
+                    </td>
+                    <td class="col">
+                        <form method="post">
+                            <input type="hidden" name="id" value="@Model.reader.GetInt32(0)" />
+                            <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+            @{
+                Model.reader.Close();
+            }
+        </tbody>
+    </table>
+</div>

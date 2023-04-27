@@ -3,8 +3,11 @@
 @{
 
 }
-<h1>Products page</h1>
-
+<h1>Продукты</h1>
+<br />
+<p>
+    <a asp-page="Create" class="btn btn-primary">Создать</a>
+</p>
 <table class="table">
     <thead class="table-dark">
         <tr>
@@ -12,6 +15,7 @@
             <th class="col">Unit</th>
             <th class="col">Count</th>
             <th class="col">Summa</th>
+            <th class="col"></th>
             <th class="col"></th>
             <!-- и т.д. -->
         </tr>
@@ -24,7 +28,13 @@
                 <td class="col">@Model.reader.GetString(2)</td>
                 <td class="col">@Model.reader.GetDecimal(3)</td>
                 <td class="col">@Model.reader.GetDecimal(4)</td>
-                <td class="col"><a href="/Products/Edit/@Model.reader.GetInt32(0)">Edit</a></td>
+                <td class="col"><a class="btn btn-sm btn-outline-dark" href="/Products/Edit/@Model.reader.GetInt32(0)">Изменить</a></td>
+                <td class="col">
+                    <form method="post">
+                        <input type="hidden" name="id" value="@Model.reader.GetInt32(0)" />
+                        <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
+                    </form>
+                </td>
                 <!-- и т.д. -->
             </tr>
         }

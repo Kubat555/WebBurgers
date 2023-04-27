@@ -13,7 +13,7 @@
 </div>
 <br />
 <p>
-    <a asp-page="Create" class="btn btn-primary">Create New</a>
+    <a asp-page="Create" class="btn btn-primary">Создать</a>
 </p>
 <div class="table-responsive">
     <table class="table table-striped table-hover">
@@ -33,13 +33,13 @@
                     <td class="col">@Model.reader.GetString(1)</td>
                     <td class="col">@Model.reader.GetDecimal(2)</td>
                     <td class="col">
-                        <a asp-page="./Edit" asp-route-id="@Model.reader.GetInt32(0)" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-page="./Edit" asp-route-id="@Model.reader.GetInt32(0)" class="btn btn-sm btn-outline-dark">Изменить</a>
                         
                     </td>
                     <td class="col">
                         <form method="post">
                             <input type="hidden" name="id" value="@Model.reader.GetInt32(0)" />
-                            <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                            <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
                         </form>
                     </td>
                 </tr>

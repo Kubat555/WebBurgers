@@ -1,0 +1,53 @@
+﻿@page
+@model WebBurgers.Pages.Sale.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Редактирование записи</h1>
+
+<h4>Продажа продукции</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input type="hidden" asp-for="SaleOfProduct.Id" />
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Product" class="control-label"></label>
+                <select asp-for="SaleOfProduct.Product" class="form-control" asp-items="ViewBag.Product"></select>
+            
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Count" class="control-label"></label>
+                <input asp-for="SaleOfProduct.Count" class="form-control" />
+              
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Summa" class="control-label"></label>
+                <input asp-for="SaleOfProduct.Summa" class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Date" class="control-label"></label>
+                <input asp-for="SaleOfProduct.Date" class="form-control" />
+    
+            </div>
+            <div class="form-group">
+                <label asp-for="SaleOfProduct.Employee" class="control-label"></label>
+                <select asp-for="SaleOfProduct.Employee" class="form-control" asp-items="ViewBag.Employee"></select>
+                
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a class="btn btn-dark" asp-page="./Index">Назад</a>
+</div>
+
+

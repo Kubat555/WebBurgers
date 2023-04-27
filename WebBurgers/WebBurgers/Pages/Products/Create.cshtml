@@ -1,0 +1,45 @@
+﻿@page
+@model WebBurgers.Pages.Products.CreateModel
+@{
+}
+
+<h1>Create</h1>
+
+<h4>Product</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label class="control-label">Name</label>
+                <input name="name" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Unit</label>
+                <select name="unit" class="form-control" asp-items="ViewBag.Unit"></select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Count</label>
+                <input name="count" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Summa</label>
+                <input name="summa" class="form-control" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a class="btn btn-dark" asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

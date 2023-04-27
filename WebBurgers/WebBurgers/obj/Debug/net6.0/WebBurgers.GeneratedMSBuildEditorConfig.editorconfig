@@ -15,6 +15,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = E:\Education\WebBurgers\WebBurgers\WebBurgers\WebBurgers
 build_property._RazorSourceGeneratorDebug = 
 
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Budgets/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVkZ2V0c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Budgets/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVkZ2V0c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Budgets/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVkZ2V0c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -35,8 +47,36 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5ncmVkaWVudHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Materials/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0ZXJpYWxzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Materials/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0ZXJpYWxzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Materials/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWF0ZXJpYWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Production/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdGlvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Production/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Production/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Products/Edit.cshtml]
@@ -45,6 +85,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Products/Product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdHNcUHJvZHVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/PurchaseMaterials/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHVyY2hhc2VNYXRlcmlhbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/PurchaseMaterials/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHVyY2hhc2VNYXRlcmlhbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/PurchaseMaterials/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHVyY2hhc2VNYXRlcmlhbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Sale/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FsZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Sale/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FsZVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Sale/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2FsZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Education/WebBurgers/WebBurgers/WebBurgers/WebBurgers/Pages/Shared/_ValidationScriptsPartial.cshtml]
