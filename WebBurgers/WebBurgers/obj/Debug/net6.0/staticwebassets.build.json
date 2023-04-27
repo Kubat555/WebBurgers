@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FrtDWXjlPHw2VZ1yBTUyxu+pUq8vBU9EIpB9PtuHIaM=",
+  "Hash": "ddwnd9jegMBP/V0nzSvENX67Du/Vzqz7GFtEbRd35tM=",
   "Source": "WebBurgers",
   "BasePath": "_content/WebBurgers",
   "Mode": "Default",
@@ -83,6 +83,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "E:\\Education\\WebBurgers\\WebBurgers\\WebBurgers\\WebBurgers\\wwwroot\\imgs\\lean-ground-beef-burgers.jpeg",
+      "SourceId": "WebBurgers",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Education\\WebBurgers\\WebBurgers\\WebBurgers\\WebBurgers\\wwwroot\\",
+      "BasePath": "_content/WebBurgers",
+      "RelativePath": "imgs/lean-ground-beef-burgers.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\lean-ground-beef-burgers.jpeg"
+    },
+    {
+      "Identity": "E:\\Education\\WebBurgers\\WebBurgers\\WebBurgers\\WebBurgers\\wwwroot\\imgs\\produkty-bez-glyutena-9600-960x540.jpg",
+      "SourceId": "WebBurgers",
+      "SourceType": "Discovered",
+      "ContentRoot": "E:\\Education\\WebBurgers\\WebBurgers\\WebBurgers\\WebBurgers\\wwwroot\\",
+      "BasePath": "_content/WebBurgers",
+      "RelativePath": "imgs/produkty-bez-glyutena-9600-960x540.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imgs\\produkty-bez-glyutena-9600-960x540.jpg"
     },
     {
       "Identity": "E:\\Education\\WebBurgers\\WebBurgers\\WebBurgers\\WebBurgers\\wwwroot\\js\\site.js",

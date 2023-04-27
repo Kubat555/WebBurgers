@@ -18,5 +18,15 @@
 		  <PrivateAssets>all</PrivateAssets>
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\imgs\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="wwwroot\imgs\lean-ground-beef-burgers.jpeg" />
+	  <None Include="wwwroot\imgs\produkty-bez-glyutena-9600-960x540.jpg" />
 	</ItemGroup>
 </Project>

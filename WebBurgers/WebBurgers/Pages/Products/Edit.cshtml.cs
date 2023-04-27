@@ -2,8 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 using WebBurgers.DataBase;
+using WebBurgers.Repository;
 
 namespace WebBurgers.Pages.Products
 {
@@ -16,6 +18,13 @@ namespace WebBurgers.Pages.Products
         public int ID = 0;
         public SqlDataReader reader;
         public SelectList Units { get; set; }
+
+        private readonly BurgerContext db;
+
+        public EditModel(BurgerContext context)
+        {
+            db = context;
+        }
         public void OnGet(int id)
         {
             ID = id;
@@ -35,15 +44,7 @@ namespace WebBurgers.Pages.Products
             }
             reader.Close();
 
-            //command = new SqlCommand("sp_getUnits", connection);
-            //command.CommandType = CommandType.StoredProcedure;
-            //reader = command.ExecuteReader();
-            //List<SelectListItem> items = new List<SelectListItem>();
-            //while (reader.Read())
-            //{
-            //    items.Add(new SelectListItem { Selected = , Text =  reader.GetString(1)});
-            //}
-            //Units = new SelectList(items, "Id", "Name", unit);
+            Units = new SelectList(db.Units.ToList(), "Id", "Name", unit);
         }
 
         public IActionResult OnPost(int ID, string ProductName, int Unit, decimal Count, decimal Summa )

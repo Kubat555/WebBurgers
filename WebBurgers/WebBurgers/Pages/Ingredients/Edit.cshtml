@@ -1,0 +1,23 @@
+﻿@page "/Ingredients/Edit/{id:int}"
+@model WebBurgers.Pages.Ingredients.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="product">Product</label>
+        <select asp-for="@Model.product" asp-items="@Model.Products" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label for="material">Material</label>
+        <select asp-for="@Model.material" asp-items="@Model.Materials" class="form-control"></select>
+    </div>
+    <div class="form-group">
+        <label for="count">Count</label>
+        <input class="form-control" id="count" name="Count" value="@Model.count" />
+    </div>
+    <br />
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
