@@ -21,11 +21,14 @@ namespace WebBurgers.Pages.Ingredients
         {
             _context = context;
         }
+        public int pId = 0;
 
-        public IActionResult OnGet()
+        public IActionResult OnGet(int id, int material)
         {
-        ViewData["Material"] = new SelectList(_context.Materials, "Id", "Name");
-        ViewData["Product"] = new SelectList(_context.Products, "Id", "Name");
+            pId = id;
+
+        ViewData["Material"] = new SelectList(_context.Materials, "Id", "Name", material);
+        ViewData["Product"] = new SelectList(_context.Products, "Id", "Name", pId);
             return Page();
         }
 
@@ -35,15 +38,37 @@ namespace WebBurgers.Pages.Ingredients
         public IActionResult OnPost(int product, int material, decimal count)
         {
             SqlConnection connection = DB.instance.getConnection();
-            SqlCommand command = new SqlCommand("sp_insertIngredient", connection);
+            SqlCommand command = new SqlCommand("SP_CheckIngredient", connection);
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("@product", product);
             command.Parameters.AddWithValue("@material", material);
-            command.Parameters.AddWithValue("@count", count);
+            SqlParameter outputParam = new SqlParameter();
+            outputParam.ParameterName = "@k";
+            outputParam.SqlDbType = System.Data.SqlDbType.Int;
+            outputParam.Direction = System.Data.ParameterDirection.Output;
+            command.Parameters.Add(outputParam);
+            command.ExecuteNonQuery();
 
-            SqlDataReader reader = command.ExecuteReader();
-            reader.Close();
-            return RedirectToPage("./Index");
+            int res = Convert.ToInt32(outputParam.Value);
+            if (res == 0)
+            {
+                TempData["Message"] = "Ошибка!";
+            }
+            else
+            {
+                command = new SqlCommand("sp_insertIngredient", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@product", product);
+                command.Parameters.AddWithValue("@material", material);
+                command.Parameters.AddWithValue("@count", count);
+
+                SqlDataReader reader = command.ExecuteReader();
+                reader.Close();
+                return RedirectToPage("./Index", new { selectedValue = product});
+            }
+
+            
+            return RedirectToPage(new {id = product, material = material });
         }
     }
 }

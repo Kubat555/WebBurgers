@@ -22,7 +22,6 @@ namespace WebBurgers.Pages.Ingredients
         public IndexModel(WebBurgers.Repository.BurgerContext context)
         {
             db = context;
-            SelectedValue = 1;
         }
 
         public SqlDataReader reader;
@@ -33,7 +32,7 @@ namespace WebBurgers.Pages.Ingredients
 
         public async Task OnGetAsync(string selectedValue)
         {
-            
+            SelectedValue = Convert.ToInt32(selectedValue);
             ProductsList = new SelectList(await db.Products.ToListAsync(), "Id", "Name");
             if(selectedValue == null)
             {
@@ -60,7 +59,7 @@ namespace WebBurgers.Pages.Ingredients
             command.Parameters.AddWithValue("@id", id);
             reader = command.ExecuteReader();
             reader.Close();
-            return RedirectToPage();
+            return RedirectToPage(new {selectedValue = SelectedValue});
         }
     }
 }

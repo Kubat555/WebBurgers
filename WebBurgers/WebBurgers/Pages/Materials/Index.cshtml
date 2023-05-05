@@ -53,7 +53,7 @@
                     <td class="col">
                         <form method="post">
                             <input type="hidden" name="id" value="@Model.reader.GetInt32(0)" />
-                            <button type="submit" class="btn btn-sm btn-danger">Удалить</button>
+                            <button type="button" class="btn btn-sm btn-danger deleteButton">Удалить</button>
                         </form>
                     </td>
                 </tr>
@@ -64,3 +64,18 @@
         </tbody>
     </table>
 </div>
+
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('.deleteButton').on('click', function (event) {
+                event.preventDefault();
+                var id = $(this).closest('form').find('input[name="id"]').val();
+                if (confirm('Вы уверены, что хотите удалить запись?')) {
+                    $(this).closest('form').submit();
+                }
+            });
+        });
+    </script>
+}

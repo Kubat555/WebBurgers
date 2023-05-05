@@ -3,50 +3,64 @@
 
 @{
     ViewData["Title"] = "Create";
+    var dateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
+
 }
 
-<h1>Create</h1>
-
-<h4>SaleOfProduct</h4>
+<h4>Продажа продукции</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="SaleOfProduct.Product" class="control-label"></label>
-                <select asp-for="SaleOfProduct.Product" class ="form-control" asp-items="ViewBag.Product"></select>
+                <select id="product" onchange="handleChange(this.value)" asp-for="SaleOfProduct.Product" class="form-control" asp-items="ViewBag.Product"></select>
             </div>
             <div class="form-group">
                 <label asp-for="SaleOfProduct.Count" class="control-label"></label>
-                <input asp-for="SaleOfProduct.Count" class="form-control" />
-                <span asp-validation-for="SaleOfProduct.Count" class="text-danger"></span>
+                <input type="number" id="count" asp-for="SaleOfProduct.Count" class="form-control"  value="0" oninput="updateSumma()" min="0"/>
+                @if (TempData["Message"] != null){
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Не достаточно продуктов!</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+                
             </div>
             <div class="form-group">
                 <label asp-for="SaleOfProduct.Summa" class="control-label"></label>
-                <input asp-for="SaleOfProduct.Summa" class="form-control" />
-                <span asp-validation-for="SaleOfProduct.Summa" class="text-danger"></span>
+                <input asp-for="SaleOfProduct.Summa" class="form-control" id="input2" value="0" disabled/>
             </div>
             <div class="form-group">
                 <label asp-for="SaleOfProduct.Date" class="control-label"></label>
-                <input asp-for="SaleOfProduct.Date" class="form-control" />
-                <span asp-validation-for="SaleOfProduct.Date" class="text-danger"></span>
+                <input asp-for="SaleOfProduct.Date" class="form-control" value="@dateTime"/>
             </div>
             <div class="form-group">
                 <label asp-for="SaleOfProduct.Employee" class="control-label"></label>
                 <select asp-for="SaleOfProduct.Employee" class ="form-control" asp-items="ViewBag.Employee"></select>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Создать" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
+<br />
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a class="btn btn-dark" asp-page="Index">Назад</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<script>
+    function handleChange(product) {
+        console.log(product);
+        var selectedValue = document.getElementById("product").value;
+        window.location.href = "?id=" + selectedValue;
+    }
+
+    function updateSumma(){
+        var s = document.getElementById("count").value;
+
+        document.getElementById("input2").value = s * @Model.price;
+    }
+</script>

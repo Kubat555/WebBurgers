@@ -3,6 +3,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    var dateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
 }
 
 <h1>Закупка сырья</h1>
@@ -17,12 +18,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="PurchaseMaterial.Count" class="control-label"></label>
-                <input asp-for="PurchaseMaterial.Count" class="form-control" />
+                <input asp-for="PurchaseMaterial.Count" class="form-control" value="0" />
                 
             </div>
             <div class="form-group">
                 <label asp-for="PurchaseMaterial.Summa" class="control-label"></label>
-                <input asp-for="PurchaseMaterial.Summa" class="form-control" />
+                <input asp-for="PurchaseMaterial.Summa" class="form-control" value="0"/>
                 @if(TempData["Message"] != null){
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
                       <strong>Не достаточно бюджета!</strong> Стоимость сырья не должна превышать количество бюджета.
@@ -32,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="PurchaseMaterial.Date" class="control-label"></label>
-                <input asp-for="PurchaseMaterial.Date" class="form-control" />
+                <input asp-for="PurchaseMaterial.Date" class="form-control" value="@dateTime" />
                 
             </div>
             <div class="form-group">

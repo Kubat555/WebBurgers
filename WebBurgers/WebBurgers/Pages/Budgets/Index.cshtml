@@ -5,13 +5,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Бюджет</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
+@*<p>
+    <a class="btn btn-primary btn-sm" asp-page="Create">Create New</a>
+</p>*@
+<table class="table table-striped">
+    <thead class="table-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Budget[0].Summa)
@@ -38,7 +38,7 @@
                 @Html.DisplayFor(modelItem => item.EmployeesPercent)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                <a class="btn btn-primary btn-sm" asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
             </td>
         </tr>
 }

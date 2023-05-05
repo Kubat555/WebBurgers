@@ -14,15 +14,22 @@
         <form method="post">
             <div class="form-group">
                 <label class="control-label">Product</label>
-                <select name="product" class ="form-control" asp-items="ViewBag.Product"></select>
+                <select name="product" class ="form-control" asp-items="ViewBag.Product" itemid="@Model.pId"></select>
             </div>
             <div class="form-group">
                 <label  class="control-label">Material</label>
                 <select name="material" class ="form-control" asp-items="ViewBag.Material"></select>
+                @if (TempData["Message"] != null)
+                {
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Такой ингредиент уже существует!</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
             </div>
             <div class="form-group">
                 <label class="control-label">Count</label>
-                <input name="count" class="form-control" />
+                <input name="count" class="form-control" value="0"/>
             </div>
             <br />
             <div class="form-group">

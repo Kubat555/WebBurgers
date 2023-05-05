@@ -3,45 +3,49 @@
 
 @{
     ViewData["Title"] = "Create";
+    var dateTime = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
 }
 
-<h1>Create</h1>
-
-<h4>ProductionOfProduct</h4>
+<h4>Производство продукции</h4>
 <hr />
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Не достаточно ингредиентов!</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
 <div class="row">
     <div class="col-md-4">
         <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
             <div class="form-group">
                 <label asp-for="ProductionOfProduct.Product" class="control-label"></label>
                 <select asp-for="ProductionOfProduct.Product" class ="form-control" asp-items="ViewBag.Product"></select>
             </div>
             <div class="form-group">
                 <label asp-for="ProductionOfProduct.Count" class="control-label"></label>
-                <input asp-for="ProductionOfProduct.Count" class="form-control" />
-                <span asp-validation-for="ProductionOfProduct.Count" class="text-danger"></span>
+                <input asp-for="ProductionOfProduct.Count" class="form-control" value="0"/>
+                
             </div>
             <div class="form-group">
                 <label asp-for="ProductionOfProduct.Date" class="control-label"></label>
-                <input asp-for="ProductionOfProduct.Date" class="form-control" />
-                <span asp-validation-for="ProductionOfProduct.Date" class="text-danger"></span>
+                <input asp-for="ProductionOfProduct.Date" class="form-control" value="@dateTime" />
+                
             </div>
             <div class="form-group">
                 <label asp-for="ProductionOfProduct.Employee" class="control-label"></label>
                 <select asp-for="ProductionOfProduct.Employee" class ="form-control" asp-items="ViewBag.Employee"></select>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Создать" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
+<br />
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a class="btn btn-dark" asp-page="Index">Назад</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
