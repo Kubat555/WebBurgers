@@ -1,0 +1,34 @@
+﻿@page
+@model WebBurgers.Pages.Salaries.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Редактирование</h1>
+
+<h4>Зарплата</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <input type="hidden" asp-for="Salary.Id" />
+            <input type="hidden" asp-for="Salary.SalaryMonth" class="form-control" />
+            <input type="hidden" asp-for="Salary.SalaryYear" class="form-control" />
+
+            <div class="form-group">
+                <label asp-for="Salary.TotalSalary" class="control-label"></label>
+                <input asp-for="Salary.TotalSalary" class="form-control" />
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Сохранить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<br />
+<div>
+    <a asp-page="./Index">Назад</a>
+</div>
+
